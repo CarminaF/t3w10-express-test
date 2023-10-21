@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  runs_server_test:
+  runs_server_tests:
     name: Run server tests
     runs-on: ubuntu-latest
 
