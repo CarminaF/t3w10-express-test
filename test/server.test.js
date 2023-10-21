@@ -15,3 +15,18 @@ describe("Server root route exist and returns hello world", () => {
         expect(response.body.message).toEqual("Hello World!");
     })
 }) 
+
+describe("POST to root route copes message in request body", () => {
+    test('POST request.body.message of "Hello world" returns received value of "Hello world', async () => {
+        
+        let messageToSend = "Hello World!"
+        
+        const response = await request(app)
+        .post("/")
+        .send({
+            message: messageToSend
+        })
+
+        expect(response.body.received).toEqual(messageToSend)
+    })
+})
